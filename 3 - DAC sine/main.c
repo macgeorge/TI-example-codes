@@ -14,9 +14,8 @@
 
 #include "F28x_Project.h"
 
-__interrupt void scia_rx_isr(void);
+__interrupt void epwm3_isr(void);
 void InitPWM3(void), InitDAC(void);
-__interrupt void epwm3_isr(void)
 
 void main(void)
 {
@@ -74,6 +73,7 @@ void InitPWM3(void)
     CpuSysRegs.PCLKCR0.bit.TBCLKSYNC = 1; 		//start PWM counters
     EDIS;
 }
+
 void InitDAC(void)
 {
 	//pin 27 on board//
